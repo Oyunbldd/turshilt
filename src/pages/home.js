@@ -1,16 +1,32 @@
 import React from 'react'
-import AddButton from '../components/addButton'
-import List from '../components/list'
-
+import Input from './input'
+import Burtgel from '../components/burtgel'
+import Nevtersen from '../components/Nevtersen'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+  } from "react-router-dom";
 const Home = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', height: '700px', width: '450px', overflow: 'hidden', backgroundColor: 'rgb(239,240,242)' }}>
-            <h3>
-                File Storage
-            </h3>
-            <AddButton />
-            <List />
-        </div>
+        <Router>
+  <div className="container">
+            <Switch>
+             <Route exact path='/'>
+                 <Input/>
+             </Route>
+             <Route exact path='/burtguuleh'>
+                 <Burtgel/>
+             </Route>
+             <Route exact path='/nevtersen'>
+               <Nevtersen/>
+             </Route>
+            </Switch>
+         </div>
+        </Router>
     )
 }
 
