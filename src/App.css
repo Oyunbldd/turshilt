@@ -108,3 +108,11 @@ padding-left:8px;
   color: #ffffff;
   font-size: 20px;
 }
+.nuur{
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #F8FEFF;
+  display: flex;
+}

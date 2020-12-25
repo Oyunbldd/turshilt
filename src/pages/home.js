@@ -2,6 +2,7 @@ import React from 'react'
 import Input from './input'
 import Burtgel from '../components/burtgel'
 import Nevtersen from '../components/Nevtersen'
+import AddDoc from '../pages/adddata'
 import {
     BrowserRouter as Router,
     Switch,
@@ -23,6 +24,9 @@ const Home = () => {
              </Route>
              <Route exact path='/nevtersen'>
                <Nevtersen/>
+             </Route>
+             <Route exact path='/Doc'>
+               <AddDoc/>
              </Route>
             </Switch>
          </div>

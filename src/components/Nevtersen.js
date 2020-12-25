@@ -1,4 +1,4 @@
-import  React, { useContext } from 'react'
+import  React, { useContext, useEffect, useState } from 'react'
 import {firebase,db,storage,auth} from '../firebase'
 import {TasksContext} from '../pages/provider'
 import {
@@ -10,14 +10,18 @@ import {
     useParams,useHistory
   } from "react-router-dom";
 const Nevtersen=()=>{
-    let gg
+    const [gg,setGg]=useState(0)
     const history=useHistory()
     const {user}=useContext(TasksContext)
-    console.log(user)
+    if(user===null){
+        history.push('/')
+    }
     return(
-        <div>
+        <div className='nuur'>
             {user}
         </div>
     )
+ 
+   
 }
 export default Nevtersen

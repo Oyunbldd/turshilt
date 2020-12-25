@@ -13,7 +13,6 @@ firebase.initializeApp({
 });
 
 let db = firebase.firestore()
-// let storage = firebase.storageBucket()
 let auth=firebase.auth()
 
 export {

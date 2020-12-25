@@ -25,6 +25,7 @@ useEffect(()=>{
 const register=(a,e)=>{
     auth.createUserWithEmailAndPassword(a,e)
     .then((user) => {
+      setUser(user.email)
        history.push('/nevtersen')
        window.location.reload(true);
     })

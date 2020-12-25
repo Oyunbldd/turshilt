@@ -11,10 +11,10 @@ const Turshilt = () => {
     const {user}=useContext(TasksContext)
     const darsan=()=>{
         var provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-        firebase.auth().signInWithPopup(provider).then(function(result) {
+        auth.signInWithPopup(provider).then(function(result) {
             var token = result.credential.accessToken;
             var user = result.user;
+            setUser(user.email)
             history.push('/nevtersen')
           }).catch(function(error) {
             var errorCode = error.code;

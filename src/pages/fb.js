@@ -7,17 +7,21 @@ import {BrowserRouter as router,Switch,Route,useHistory,useRouteMatch,
 const FB = () => {
     const history=useHistory()
     const {register}=useContext(TasksContext)
+    const {setUser}=useContext(TasksContext)
     const darsan=()=>{
         var provider = new firebase.auth.FacebookAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function(result) {
+       auth.signInWithPopup(provider).then(function(result) {
             var token = result.credential.accessToken;
             var user = result.user;
+             setUser(user.email)
             history.push('/nevtersen')
+            console.log(user)
           }).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             var email = error.email;
             var credential = error.credential;
+            console.log(error)
           });
     }
     return (
